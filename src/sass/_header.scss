@@ -39,7 +39,7 @@
     transition-duration: map-get($animations, 'duration');
   }
   &__bottom {
-    background-color: rgba(253, 188, 254, 0.148);
+    background-color: map-get($colors, 'transparent');
     width: 100%;
     height: map-get($header, 'invisibleHeight');
     // overflow: hidden;
@@ -55,7 +55,8 @@
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &:focus-within {
     transform: translate(0, 0px);
   }
 }

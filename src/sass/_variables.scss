@@ -1,7 +1,10 @@
 // $desktop: 1280px;
 $colors: (
   'text': #000000,
-  'header': rgba(47, 151, 200, 0.568),
+  'header': rgba(88, 200, 47, 0.568),
+  transparent: rgba(88, 200, 47, 0),
+  gallery: #ffd2f8,
+  galleryItem: #ffc191,
 );
 $animations: (
   duration: 300ms,
@@ -13,7 +16,12 @@ $header: (
   transform: translate(0, -40px),
   contentHeight: 26,
   marginHorisontal: 6px,
-  //26px,,
+);
+$gallery: (
+  itemWidth: 80px,
+  itemHeight: 100px,
+  imgWidth: 80px,
+  imgHeight: 80px,
 );
 
 // .container {
