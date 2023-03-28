@@ -1,14 +1,28 @@
 .searchInput {
-  margin: auto;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-left: 6px;
+  // margin-right: 6px;
   height: map-get($header, 'contentHeight');
   width: 220px;
 }
 .searchBtn {
-  margin: auto;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-left: 6px;
+  // margin-right: 6px;
   height: map-get($header, 'contentHeight');
   width: 30px;
 }
-
+.pageCount {
+  margin-top: 0px;
+  margin-left: 6px;
+}
+.searchCounter {
+  // height: map-get($header, 'contentHeight');
+  // overflow: hidden;
+  // margin: auto;
+}
 .header {
   width: 100%;
   // height: 40px;
@@ -16,9 +30,11 @@
   transition-duration: map-get($animations, 'duration');
 
   &__content {
+    display: flex;
+    flex-direction: row;
     background-color: map-get($colors, 'header');
     width: 100%;
-    height: map-get($header, 'height');
+    // height: map-get($header, 'height');
     overflow: hidden;
     transition-duration: map-get($animations, 'duration');
   }
