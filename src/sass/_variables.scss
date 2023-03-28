@@ -1,0 +1,25 @@
+// $desktop: 1280px;
+$colors: (
+  'text': #000000,
+  'header': rgba(47, 151, 200, 0.568),
+);
+$animations: (
+  duration: 300ms,
+);
+$header: (
+  height: 40px,
+  behindHeight: 43px,
+  invisibleHeight: 80px,
+  transform: translate(0, -40px),
+  contentHeight: 26,
+  //26px,
+);
+
+// .container {
+//   margin: 0px auto;
+// }
+// body {
+//   color: getColor('black-primary');
+//   font-family: 'DM Sans', sans-serif;
+//   font-family: 'Titan One', cursive;
+// }

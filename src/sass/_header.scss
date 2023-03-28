@@ -1,0 +1,45 @@
+.searchInput {
+  margin: auto;
+  height: map-get($header, 'contentHeight');
+  width: 220px;
+}
+.searchBtn {
+  margin: auto;
+  height: map-get($header, 'contentHeight');
+  width: 30px;
+}
+
+.header {
+  width: 100%;
+  // height: 40px;
+  transform: map-get($header, 'transform');
+  transition-duration: map-get($animations, 'duration');
+
+  &__content {
+    background-color: map-get($colors, 'header');
+    width: 100%;
+    height: map-get($header, 'height');
+    overflow: hidden;
+    transition-duration: map-get($animations, 'duration');
+  }
+  &__bottom {
+    background-color: rgba(253, 188, 254, 0.148);
+    width: 100%;
+    height: map-get($header, 'invisibleHeight');
+    overflow: hidden;
+    transition-duration: map-get($animations, 'duration');
+
+    &:hover,
+    &:focus {
+      // transform: translate(0, 0px);
+      // height: 0px;
+      height: map-get($header, 'behindHeight');
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translate(0, 0px);
+  }
+}
