@@ -1,31 +1,30 @@
 .searchInput {
   box-sizing: border-box;
   margin-top: 0px;
-  margin-left: 6px;
-  // margin-right: 6px;
+  margin-left: map-get($header, 'marginHorisontal');
+  margin-right: map-get($header, 'marginHorisontal');
+  margin-bottom: 0px;
   height: map-get($header, 'contentHeight');
   width: 220px;
 }
 .searchBtn {
   box-sizing: border-box;
-  margin-top: 0px;
-  margin-left: 6px;
-  // margin-right: 6px;
+  margin: auto map-get($header, 'marginHorisontal');
   height: map-get($header, 'contentHeight');
   width: 30px;
 }
 .pageCount {
-  margin-top: 0px;
-  margin-left: 6px;
+  margin: auto map-get($header, 'marginHorisontal');
 }
 .searchCounter {
-  // height: map-get($header, 'contentHeight');
-  // overflow: hidden;
-  // margin: auto;
+  // background-color: red;
+  margin: auto;
 }
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   width: 100%;
-  // height: 40px;
   transform: map-get($header, 'transform');
   transition-duration: map-get($animations, 'duration');
 
@@ -34,15 +33,16 @@
     flex-direction: row;
     background-color: map-get($colors, 'header');
     width: 100%;
-    // height: map-get($header, 'height');
-    overflow: hidden;
+    // height: 2222px;
+    height: map-get($header, 'height');
+    // overflow: hidden;
     transition-duration: map-get($animations, 'duration');
   }
   &__bottom {
     background-color: rgba(253, 188, 254, 0.148);
     width: 100%;
     height: map-get($header, 'invisibleHeight');
-    overflow: hidden;
+    // overflow: hidden;
     transition-duration: map-get($animations, 'duration');
 
     &:hover,

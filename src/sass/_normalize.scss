@@ -1,7 +1,13 @@
-body {
+body,
+header,
+footer,
+div {
   margin: 0;
+  padding: 0;
 }
-
+input {
+  vertical-align: top;
+}
 h1,
 h2,
 h3,
