@@ -1,13 +1,21 @@
 import { log } from './functions';
 import { getTextWidth } from './functions';
 import { debounce } from './functions';
+import { gallery } from './displayingGallery';
 // import { _ } from 'lodash';
 
-export const sendData = el => {
+export const sendData = element => {
   return debounce(event => {
-    //
-    log('Requesting images of: ' + el.value + '.');
-    //
+    const req = element.value.trim();
+    if (req) {
+      //
+
+      log('Requesting images of: [' + req + '].');
+
+      //
+    } else {
+      gallery.clear();
+    }
   });
 };
 
