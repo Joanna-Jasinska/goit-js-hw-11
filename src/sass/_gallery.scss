@@ -16,6 +16,7 @@
   // scroll-behavior: smooth;
 
   & a {
+    width: 100%;
     display: flex;
     flex-grow: 100;
     overflow: hidden;
@@ -24,7 +25,14 @@
 }
 
 .card {
-  padding: 6px;
+  // radial-gradient(150px 40px at 50% bottom);
+  //  #ff0000 1%, #00ffff00),
+  // radial-gradient($gradient),
+  // radial-gradient(150px 40px at 195px bottom, #666, #222);
+  border-radius: 16px; //5%;
+  // border: 1px solid map-get($colors, 'border');
+  overflow: hidden;
+  padding: 12px;
   gap: 6px;
   background-color: map-get($colors, 'galleryItem');
   // width: map-get($gallery, 'itemWidth');
@@ -41,6 +49,8 @@
   box-shadow: $box-shadow;
 
   &__img {
+    background: radial-gradient($gradient);
+    border-radius: 16px 16px 16px 16px; //5% 5% 5% 5%;
     // display: block;
     // width: map-get($gallery, 'imgWidth');
     // height: map-get($gallery, 'imgHeight');
@@ -60,7 +70,7 @@
     justify-content: space-around;
     width: 100%;
     // flex-wrap: wrap;
-    gap: 4px;
+    // gap: 2px;
     &--entry {
       flex-grow: 1;
       display: flex;
@@ -77,9 +87,10 @@
 .span--number {
   margin: 0 18px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .card {
     flex: 1 0 400px; //gpt 2
+    padding: 6px;
     // aspect-ratio: 5/2; //gpt 3
     // max-height: 45vh;
     max-width: 100%;
@@ -89,7 +100,7 @@
     }
   }
 }
-@media screen and (max-width: 600px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
   .card {
     // flex: 1 0 400px; //gpt 2
     aspect-ratio: 5/2; //gpt 3

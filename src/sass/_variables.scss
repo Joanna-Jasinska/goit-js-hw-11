@@ -3,8 +3,12 @@ $colors: (
   'text': #000000,
   'header': rgba(88, 200, 47, 0.568),
   transparent: rgba(88, 200, 47, 0),
-  gallery: #ffd2f8,
-  galleryItem: #ffe09e,
+  gallery: rgba(149, 224, 0, 0.484),
+  // #ffd2f8, pink
+  // #ffe09e, orange #ffefc2ca yellow transparent
+  galleryItem: #fff2df,
+  // #ffe7c2ca,
+  border: #ffffff,
 );
 $animations: (
   duration: 300ms,
@@ -12,6 +16,8 @@ $animations: (
 );
 $box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+$gradient: white 50%, #f3ecbf00 70%, #f3ecbf00 80%;
+// ellipse at 50% 60%,
 $header: (
   height: 40px,
   behindHeight: 43px,
