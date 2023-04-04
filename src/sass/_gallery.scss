@@ -1,18 +1,3 @@
-// .sl-wrapper {
-//   & .sl-close {
-//     font-size: 5rem !important;
-//     color: map-get($colors, 'previewButtons') !important;
-//   }
-//   & .sl-next {
-//     font-size: 5rem !important;
-//     color: map-get($colors, 'previewButtons') !important;
-//   }
-//   & .sl-prev {
-//     font-size: 5rem !important;
-//     color: map-get($colors, 'previewButtons') !important;
-//   }
-// }
-
 .gallery {
   padding: 6px;
   gap: 4px;
@@ -97,10 +82,10 @@
 }
 .span--description {
   font-weight: bold;
-  margin: 0 8px;
+  margin: 0 4px;
 }
 .span--number {
-  margin: 0 8px;
+  margin: 0 4px;
 }
 @media screen and (max-width: 900px) {
   .card {
