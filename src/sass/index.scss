@@ -1,5 +1,8 @@
 // @import './common';
 // @import './example';
+// import 'simplelightbox/dist/simple-lightbox.min.css'; //w pliku .js
+// @import '../../node_modules/simplelightbox/src/simple-lightbox.scss';
+@import './simple-lightbox';
 @import './normalize';
 @import './variables';
 @import './header';

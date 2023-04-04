@@ -1,3 +1,18 @@
+// .sl-wrapper {
+//   & .sl-close {
+//     font-size: 5rem !important;
+//     color: map-get($colors, 'previewButtons') !important;
+//   }
+//   & .sl-next {
+//     font-size: 5rem !important;
+//     color: map-get($colors, 'previewButtons') !important;
+//   }
+//   & .sl-prev {
+//     font-size: 5rem !important;
+//     color: map-get($colors, 'previewButtons') !important;
+//   }
+// }
+
 .gallery {
   padding: 6px;
   gap: 4px;
@@ -37,7 +52,7 @@
   background-color: map-get($colors, 'galleryItem');
   // width: map-get($gallery, 'itemWidth');
   // height: map-get($gallery, 'itemHeight');
-  flex: 1 0 400px; //gpt 2
+  flex: 1 0 300px; //1 0 400px; (4 karty)
   aspect-ratio: 4/3; //gpt 3
   // max-height: 55vh;
   max-width: 40vw;
@@ -82,10 +97,10 @@
 }
 .span--description {
   font-weight: bold;
-  margin: 0 18px;
+  margin: 0 8px;
 }
 .span--number {
-  margin: 0 18px;
+  margin: 0 8px;
 }
 @media screen and (max-width: 900px) {
   .card {

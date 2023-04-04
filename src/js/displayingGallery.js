@@ -1,4 +1,16 @@
 import { log } from './functions';
+import SimpleLightbox from 'simplelightbox';
+
+const options = {
+  captions: true,
+  captionsData: 'alt',
+  captionSelector: 'img',
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+};
+let galleryDisplay = new SimpleLightbox('.gallery a', options);
 //
 
 export const gallery = {
@@ -10,10 +22,11 @@ export const gallery = {
   renderCard: function (data) {
     // adding one image card
     log(`Rendering card, ID: ${data.id}`);
+    // data.previewURL data.largeImageURL
     const markup = `
     <div class="card">
       <a href="${data.largeImageURL}"
-        ><img class="card__img" src="${data.previewURL}" alt="" title=""
+        ><img class="card__img" src="${data.largeImageURL}" alt="" title=""
       /></a>
       <div class="card__info">
         <div class="card__info--entry">
@@ -51,5 +64,8 @@ export const gallery = {
     for (const card of list) {
       this.renderCard(card);
     }
+
+    galleryDisplay.destroy();
+    galleryDisplay = new SimpleLightbox('.gallery a', options);
   },
 };
