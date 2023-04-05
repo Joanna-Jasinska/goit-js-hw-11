@@ -16,6 +16,8 @@
   // scroll-behavior: smooth;
 
   & a {
+    // background-image: url('https://pixabay.com/get/g3b4c0beb7d52e04c253d5793e41d2a546a9ce322e1527762eae1ba762c7aae115e36a4d785f354629a0ad834987fd98d8e641e7cfc031545124764ce148e4d14_1280.jpg');
+
     width: 100%;
     display: flex;
     flex-grow: 100;
@@ -49,8 +51,7 @@
   box-shadow: $box-shadow;
 
   &__img {
-    background: radial-gradient($gradient);
-    border-radius: 16px 16px 16px 16px; //5% 5% 5% 5%;
+    // background-image: '';
     // display: block;
     // width: map-get($gallery, 'imgWidth');
     // height: map-get($gallery, 'imgHeight');
@@ -58,6 +59,12 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    background-image: url(../images/loading.svg);
+    background-position: top right, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 80px 80px, cover;
+    // background: radial-gradient($gradient);
+    border-radius: 16px 16px 16px 16px; //5% 5% 5% 5%;
   }
   &__info {
     // flex: 0 1 auto;

@@ -6,8 +6,13 @@ import { _ } from 'lodash';
 //   element.style.height = element.scrollHeight + 3 + 'px';
 // }
 
-export const debounce = (f, arg) => {
+export const debounce = (f, arg, doNotDebounce = false) => {
   // log('init debouncing: ' + f + '----(' + arg + ')');
+  if (doNotDebounce) {
+    if (arg) return () => f(arg);
+    if (Array.isArray(arg)) return () => f(...arg);
+    return () => f();
+  }
   const debouncedF = _.debounce(f, DEBOUNCE_DELAY, [
     {
       leading: false,
@@ -28,4 +33,16 @@ export const getTextWidth = (text, font) => {
   context.font = font;
   const metrics = context.measureText(text);
   return metrics.width;
+};
+
+export const inputShow = () => {
+  const input = document.querySelector('.searchInput');
+  return debounce(input.focus.bind(input))(); //showing search bar after a delay
+  //
+};
+
+export const onScroll = () => {
+  return debounce(event => {
+    //
+  });
 };

@@ -12,9 +12,13 @@ $colors: (
   // #ffd2f8, pink
   // #ffe09e, orange #ffefc2ca yellow transparent
   galleryItem: #fff2df,
+  loadingIcon: #d7dca98a,
   // #ffe7c2ca,
   border: #ffffff,
-  previewButtons: #515c25,
+  previewButtons: #3e431b,
+  // #515c25 dark green
+  previewBg: #fffae3,
+  //#eeffa8 green, #fffcda yellow, #fff8da orange
 );
 $animations: (
   duration: 300ms,

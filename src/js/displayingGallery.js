@@ -1,5 +1,6 @@
 import { log } from './functions';
 import SimpleLightbox from 'simplelightbox';
+import { debounce } from './functions';
 
 const options = {
   captions: true,
@@ -23,9 +24,17 @@ export const gallery = {
     // adding one image card
     log(`Rendering card, ID: ${data.id}`);
     // data.previewURL data.largeImageURL
+    // background-image: url('${data.previewURL}');
+    // const style = `background-image: url(./images/loading.png), url('${data.previewURL}');
+    // background-position: top right, center;
+    // background-repeat: no-repeat, repeat;
+    // background-size: 80px 80px, cover;`;
+    // /__parcel_source_root/src/images/loading.svg
+    // const style = `background-image: url('./images/loading.svg');`;
+    // style="${style}""
     const markup = `
     <div class="card">
-      <a href="${data.largeImageURL}"
+      <a href="${data.largeImageURL}" 
         ><img class="card__img" src="${data.largeImageURL}" alt="" title=""
       /></a>
       <div class="card__info">
@@ -57,6 +66,18 @@ export const gallery = {
       a.onclick = e => {
         e.preventDefault();
       };
+      const img = a.querySelector('img');
+      const existingBgImage = window
+        .getComputedStyle(img)
+        .getPropertyValue('background-image');
+
+      img.setAttribute(
+        'style',
+        `background-image: ${existingBgImage}, url(${data.previewURL});`
+      );
+      // img.style.backgroundImage = `${img.style.backgroundImage}, url(${data.previewURL})`;
+      // log(img);
+      // const style = `background-image: url('./images/loading.svg');`;
     }
   },
   renderCards: function (list) {

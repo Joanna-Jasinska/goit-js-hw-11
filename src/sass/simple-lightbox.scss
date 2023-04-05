@@ -1,9 +1,9 @@
 // You can customize Simplelightbox with the following variables:
 
 $sl-font-family: Arial, Baskerville, monospace !default;
-$sl-overlay-background: #fff !default;
-$sl-navigation-color: #000 !default;
-$sl-caption-color: #fff !default;
+$sl-overlay-background: map-get($colors, 'previewBg') !default;
+$sl-navigation-color: map-get($colors, 'previewButtons') !default; //#000
+$sl-caption-color: map-get($colors, 'previewBg') !default; //#fff
 $sl-caption-background: rgba(0, 0, 0, 0.8) !default;
 
 $sl-counter-fontsize: 1rem !default;
