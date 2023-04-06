@@ -1,1 +1,0 @@
-{"mappings":"AAAA,IAAMA,KAAO,kBACPC,cAAgB,IAChBC,cAAgB,IAChBC,eAAiB","sources":["src/js/variables.js"],"sourcesContent":["const font = 'bold 12pt arial';\nconst inputMinWidth = 160;\nconst inputMaxWidth = 600;\nconst DEBOUNCE_DELAY = 400;\n"],"names":["font","inputMinWidth","inputMaxWidth","DEBOUNCE_DELAY"],"version":3,"file":"index.a7726506.js.map"}
