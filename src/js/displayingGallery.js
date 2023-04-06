@@ -17,7 +17,7 @@ let galleryDisplay = new SimpleLightbox('.gallery a', options);
 export const gallery = {
   clear: function () {
     const galleryDiv = document.querySelector('.gallery');
-    galleryDiv.innerHTML = '';
+    galleryDiv.innerHTML = '<div class="gallery__filler"></div>';
     log('gallery cleared.');
   },
   renderCard: function (data) {

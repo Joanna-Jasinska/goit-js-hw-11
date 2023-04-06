@@ -25,6 +25,9 @@
     overflow: hidden;
     display: block;
   }
+  &__filler {
+    min-height: 60px;
+  }
 }
 
 .card {
