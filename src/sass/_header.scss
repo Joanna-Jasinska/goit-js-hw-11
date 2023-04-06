@@ -1,18 +1,9 @@
-.searchInput {
-  box-sizing: border-box;
-  margin-top: 0px;
-  margin-left: map-get($header, 'marginHorisontal');
-  margin-right: map-get($header, 'marginHorisontal');
-  margin-bottom: 0px;
-  height: map-get($header, 'contentHeight');
-  width: 160px;
-}
-.searchBtn {
-  box-sizing: border-box;
-  margin: auto map-get($header, 'marginHorisontal');
-  height: map-get($header, 'contentHeight');
-  width: 30px;
-}
+// .searchInput {
+//   //
+// }
+// .searchBtn {
+//   //
+// }
 .pageCount {
   margin: auto map-get($header, 'marginHorisontal');
 }
@@ -39,6 +30,7 @@
     transition-duration: map-get($animations, 'duration');
     // box-shadow: map-get($animations, 'box-shadow');
     box-shadow: $box-shadow;
+    border-radius: 0 0 16px 16px; //5%;
   }
   &__bottom {
     background-color: map-get($colors, 'transparent');

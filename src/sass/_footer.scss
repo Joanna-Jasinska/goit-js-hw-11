@@ -1,0 +1,33 @@
+.footer {
+  padding: 10px 6px 40px 6px;
+  //   overflow: auto;
+  //   position: fixed;
+  position: relative;
+  //   bottom: 0;
+  //   z-index: 1;
+  width: 100%;
+  //   transform: map-get($footer, 'transform');
+  //   transition-duration: map-get($animations, 'duration');
+
+  &__content {
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    background-color: map-get($colors, 'footer');
+    width: 100%;
+    border-radius: 16px; //5%;
+    // height: 2222px;
+    height: map-get($footer, 'height');
+    // overflow: hidden;
+    transition-duration: map-get($animations, 'duration');
+    // box-shadow: map-get($animations, 'box-shadow');
+    box-shadow: $box-shadow;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    // transform: translate(0, 0px);
+  }
+}

@@ -1,7 +1,4 @@
-// const axios = require('axios/dist/browser/axios.cjs');
 import axios from 'axios';
-// import { axios } from 'axios'; ///dist/browser/axios.cjs
-// const axios = require('axios');
 import { log } from './functions';
 import { getTextWidth } from './functions';
 import { debounce } from './functions';
@@ -83,4 +80,7 @@ export const inputChange = el => {
     )
   );
   el.style.width = textWidth + 'px';
+  const inputDuplicate = document.querySelector('.inputToRedirect');
+  inputDuplicate.value = el.value;
+  inputDuplicate.style.width = textWidth + 'px';
 };

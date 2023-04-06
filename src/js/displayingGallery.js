@@ -61,8 +61,8 @@ export const gallery = {
     const links = document.querySelectorAll('.gallery a');
     const a = links ? links[links.length - 1] : null;
     if (a) {
-      log(`preventing link ${a} from page redirecting`);
-      log(a);
+      // log(`preventing link ${a} from page redirecting`);
+      // log(a);
       a.onclick = e => {
         e.preventDefault();
       };
@@ -88,5 +88,9 @@ export const gallery = {
 
     galleryDisplay.destroy();
     galleryDisplay = new SimpleLightbox('.gallery a', options);
+  },
+  loadMore: function () {
+    log('loading more');
+    //
   },
 };

@@ -1,0 +1,58 @@
+.input {
+  // box-shadow: $box-shadow;
+  // outline: 2px solid #ff0000;
+  // outline-color: map-get($colors, 'border');
+  box-shadow: $box-shadow, $box-shadow-inverted;
+  background-color: map-get($colors, 'input');
+  border-radius: 8px;
+  border-width: 0px;
+  // border-color: map-get($colors, 'border');
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-left: map-get($header, 'marginHorisontal');
+  margin-right: map-get($header, 'marginHorisontal');
+  margin-bottom: 0px;
+  height: map-get($header, 'contentHeight');
+  width: 160px;
+  transition-duration: map-get($animations, 'duration');
+
+  &:focus,
+  &:active {
+    // border: none;
+    outline: none;
+    // outline: 2px solid map-get($colors, 'border');
+    // outline-color: map-get($colors, 'border');
+    box-shadow: $box-shadow-selected;
+    // outline: 2px solid map-get($colors, 'border');
+    // outline-color: map-get($colors, 'border');
+    transform: map-get($animations, 'scale');
+  }
+}
+.btn {
+  box-shadow: $box-shadow;
+  border-width: 0px;
+  background-color: map-get($colors, 'btn');
+  border-radius: 8px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: auto map-get($header, 'marginHorisontal');
+  height: map-get($header, 'contentHeight');
+  min-width: 30px;
+  transition-duration: map-get($animations, 'duration');
+
+  &:focus,
+  &:hover,
+  &:active {
+    transform: map-get($animations, 'scale');
+  }
+}
+.page {
+  //   min-height: 100%;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  top: 0;
+  position: fixed;
+  background-color: map-get($colors, 'gallery');
+}
