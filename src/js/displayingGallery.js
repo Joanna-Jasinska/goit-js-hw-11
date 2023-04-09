@@ -1,5 +1,6 @@
 import { log } from './functions';
 import SimpleLightbox from 'simplelightbox';
+import { sendData } from './inputChange';
 import { debounce } from './functions';
 
 const options = {
@@ -18,24 +19,17 @@ export const gallery = {
   clear: function () {
     const galleryDiv = document.querySelector('.gallery');
     galleryDiv.innerHTML = '<div class="gallery__filler"></div>';
-    log('gallery cleared.');
+    // log('gallery cleared.');
   },
   renderCard: function (data) {
     // adding one image card
-    log(`Rendering card, ID: ${data.id}`);
-    // data.previewURL data.largeImageURL
-    // background-image: url('${data.previewURL}');
-    // const style = `background-image: url(./images/loading.png), url('${data.previewURL}');
-    // background-position: top right, center;
-    // background-repeat: no-repeat, repeat;
-    // background-size: 80px 80px, cover;`;
-    // /__parcel_source_root/src/images/loading.svg
-    // const style = `background-image: url('./images/loading.svg');`;
+    // log(`Rendering card, ID: ${data.id}`);
+    // data.previewURL data.largeImageURL data.webformatURL
     // style="${style}""
     const markup = `
     <div class="card">
       <a href="${data.largeImageURL}" 
-        ><img class="card__img" src="${data.largeImageURL}" alt="" title=""
+        ><img class="card__img" src="${data.webformatURL}" alt="${data.tags}" title=""
       /></a>
       <div class="card__info">
         <div class="card__info--entry">
@@ -66,18 +60,16 @@ export const gallery = {
       a.onclick = e => {
         e.preventDefault();
       };
-      const img = a.querySelector('img');
-      const existingBgImage = window
-        .getComputedStyle(img)
-        .getPropertyValue('background-image');
+      // below setting small image + 'loading' as background of 2 images, not needed anymore
+      // const img = a.querySelector('img');
+      // const existingBgImage = window
+      //   .getComputedStyle(img)
+      //   .getPropertyValue('background-image');
 
-      img.setAttribute(
-        'style',
-        `background-image: ${existingBgImage}, url(${data.previewURL});`
-      );
-      // img.style.backgroundImage = `${img.style.backgroundImage}, url(${data.previewURL})`;
-      // log(img);
-      // const style = `background-image: url('./images/loading.svg');`;
+      // img.setAttribute(
+      //   'style',
+      //   `background-image: ${existingBgImage}, url(${data.previewURL});`
+      // );
     }
   },
   renderCards: function (list) {
@@ -90,7 +82,9 @@ export const gallery = {
     galleryDisplay = new SimpleLightbox('.gallery a', options);
   },
   loadMore: function () {
-    log('loading more');
+    // log('loading more');
+    const input = document.querySelector('.searchInput');
+    sendData(input, { resetSearch: false, doNotDebounce: true })();
     //
   },
 };

@@ -1,33 +1,29 @@
+.loadMoreBtn {
+  margin: 0 auto 16px auto;
+  display: block;
+}
+.searchCounter-footer {
+  // position: absolute;
+  // left: map-get($header, 'marginHorisontal');
+  // top: map-get($footer, 'marginVertical');
+  // margin: auto map-get($footer, 'marginHorisontal');
+  margin: auto auto auto 0;
+}
 .footer {
-  padding: 10px 6px 40px 6px;
-  //   overflow: auto;
-  //   position: fixed;
+  padding: 10px 6px 30px 6px;
   position: relative;
-  //   bottom: 0;
-  //   z-index: 1;
   width: 100%;
-  //   transform: map-get($footer, 'transform');
-  //   transition-duration: map-get($animations, 'duration');
 
   &__content {
+    position: relative;
     padding: 6px;
     display: flex;
     flex-direction: row;
     background-color: map-get($colors, 'footer');
     width: 100%;
     border-radius: 16px; //5%;
-    // height: 2222px;
     height: map-get($footer, 'height');
-    // overflow: hidden;
-    transition-duration: map-get($animations, 'duration');
-    // box-shadow: map-get($animations, 'box-shadow');
+    // transition-duration: map-get($animations, 'duration');
     box-shadow: $box-shadow;
-  }
-
-  &:hover,
-  &:focus,
-  &:active,
-  &:focus-within {
-    // transform: translate(0, 0px);
   }
 }

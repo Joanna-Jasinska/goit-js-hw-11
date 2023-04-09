@@ -1,10 +1,20 @@
 <header class="header">
   <div class="header__bottom">
     <div class="header__content">
-      <div class="pageCount">5/20</div>
-      <div class="searchCounter">
-        <input class="input searchInput" />
-        <button class="btn searchBtn"></button>
+      <form class="searchCounter margin-auto">
+        <!-- <button class="btn resetBtn"></button> -->
+        <input
+          class="input searchInput"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button class="btn searchBtn" type="submit">Search</button>
+      </form>
+
+      <div class="pageCount">
+        <span class="page">5</span>/<span class="maxPages">20</span>
       </div>
     </div>
   </div>

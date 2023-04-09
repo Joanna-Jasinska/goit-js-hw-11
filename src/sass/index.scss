@@ -1,10 +1,10 @@
-// @import './common';
 // import 'simplelightbox/dist/simple-lightbox.min.css'; //w pliku .js
 // @import '../../node_modules/simplelightbox/src/simple-lightbox.scss';
 @import './normalize';
 @import './variables';
+@import './common';
 @import './simple-lightbox';
+@import './buttons';
 @import './header';
 @import './gallery';
 @import './footer';
-@import './buttons';

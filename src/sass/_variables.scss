@@ -22,10 +22,11 @@ $colors: (
   // #515c25 dark green
   previewBg: #fffae3,
   //#eeffa8 green, #fffcda yellow, #fff8da orange
+  pageCount: #e6ff965f,
 );
 $animations: (
   duration: 300ms,
-  scale: scale(1.1),
+  scale: scale(1.15),
 );
 $box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -44,13 +45,14 @@ $header: (
   invisibleHeight: 86px,
   transform: translate(0, -40px),
   contentHeight: 26,
-  marginHorisontal: 6px,
+  marginHorisontal: 5px,
 );
 $footer: (
   height: 50px,
   transform: translate(0, -40px),
   contentHeight: 26,
-  marginHorisontal: 6px,
+  marginHorisontal: 5px,
+  marginVertical: 12px,
 );
 $gallery: (
   itemWidth: 100px,
