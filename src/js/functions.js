@@ -1,5 +1,6 @@
-export const log = console.log;
 import { _ } from 'lodash';
+
+// export const log = console.log;
 
 // function auto_grow(element) {
 //   element.style.height = '25px';
@@ -7,7 +8,6 @@ import { _ } from 'lodash';
 // }
 
 export const debounce = (f, arg, doNotDebounce = false) => {
-  // log('init debouncing: ' + f + '----(' + arg + ')');
   if (doNotDebounce) {
     if (arg) return () => f(arg);
     if (Array.isArray(arg)) return () => f(...arg);
@@ -41,8 +41,8 @@ export const inputShow = () => {
   //
 };
 
-export const onScroll = () => {
-  return debounce(event => {
-    //
-  });
-};
+// export const onScroll = () => {
+//   return debounce(event => {
+//     //
+//   });
+// };

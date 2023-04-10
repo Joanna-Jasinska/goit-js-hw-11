@@ -1,10 +1,8 @@
 import axios from 'axios';
-import { log } from './functions';
-import { getTextWidth } from './functions';
-import { debounce } from './functions';
-import { gallery } from './displayingGallery';
-// import { _ } from 'lodash';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { fetchPictures } from './fetchPictures';
+import { gallery } from './displayingGallery';
+import { debounce, getTextWidth } from './functions';
 
 Notify.init({ showOnlyTheLastOne: true });
 
@@ -39,34 +37,9 @@ export const sendData = (
           lastPage = 0;
         }
         lastPage++;
-        const web = 'https://pixabay.com/api';
-        const myKey = '/?key=35027326-a21b3e2be23d4febb1cd3f928&q=';
-        let pagination = `&page=${lastPage}&per_page=${IMAGES_PER_PAGE}`;
-        const searchType =
-          '&image_type=photo&orientation=horizontal&safesearch=true';
-        if (resetSearch) {
-          //
-        }
-        const all = web + myKey + req + searchType + pagination;
-        const fake =
-          'https://pixabay.com/api/?key=35027326-a21b3e2be23d4febb1cd3f928&q=cat&image_type=photo&page=2&per_page=30';
-
-        // log('Requesting images of: [' + req + '].');
-        // log(web + myKey + req + searchType + pagination);
-        //
-        axios
-          .get(`${all}`, {
-            params: {
-              // url: '/user',
-              method: 'get', // default
-              baseURL: web,
-              // 'https://some-domain.com/api',
-            },
-          })
+        fetchPictures(req)
           .then(function (response) {
             // handle success
-
-            // console.log(response);
             maxPages = parseInt(
               Math.ceil(response.data.totalHits / IMAGES_PER_PAGE)
             );
@@ -76,7 +49,6 @@ export const sendData = (
             const loadMoreBtn = document.querySelector('.loadMoreBtn');
             const footerContent = document.querySelector('.footer__content');
             const header = document.querySelector('.header');
-            log(header);
             if (lastPage * IMAGES_PER_PAGE >= response.data.totalHits) {
               loadMoreBtn.classList.add('hide');
               footerContent.classList.add('hide');

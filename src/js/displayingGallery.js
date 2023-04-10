@@ -1,7 +1,7 @@
-import { log } from './functions';
 import SimpleLightbox from 'simplelightbox';
 import { sendData } from './inputChange';
-import { debounce } from './functions';
+// import { debounce } from './functions';
+// import { log } from './functions';
 
 const options = {
   captions: true,
@@ -19,11 +19,9 @@ export const gallery = {
   clear: function () {
     const galleryDiv = document.querySelector('.gallery');
     galleryDiv.innerHTML = '<div class="gallery__filler"></div>';
-    // log('gallery cleared.');
   },
   renderCard: function (data) {
     // adding one image card
-    // log(`Rendering card, ID: ${data.id}`);
     // data.previewURL data.largeImageURL data.webformatURL
     // style="${style}""
     const markup = `
@@ -53,10 +51,9 @@ export const gallery = {
     const galleryDiv = document.querySelector('.gallery');
     galleryDiv.innerHTML += markup;
     const links = document.querySelectorAll('.gallery a');
-    const a = links ? links[links.length - 1] : null;
+    // const a ??= links[links.length - 1]; //tu nie działa: Uncaught SyntaxError: missing = in const declaration
+    const a = links ? links[links.length - 1] : null; // tu zadziała
     if (a) {
-      // log(`preventing link ${a} from page redirecting`);
-      // log(a);
       a.onclick = e => {
         e.preventDefault();
       };
@@ -82,7 +79,6 @@ export const gallery = {
     galleryDisplay = new SimpleLightbox('.gallery a', options);
   },
   loadMore: function () {
-    // log('loading more');
     const input = document.querySelector('.searchInput');
     sendData(input, { resetSearch: false, doNotDebounce: true })();
     //
