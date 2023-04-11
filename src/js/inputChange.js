@@ -13,11 +13,8 @@ const getTextWidth = (text, font) => {
 
 export const inputChange = el => {
   let textWidth = Math.max(
-    inputMinWidth,
-    Math.min(
-      inputMaxWidth,
-      parseInt(getTextWidth(el.value, 'bold 12pt arial') + 4)
-    )
+    INPUT_MIN_WIDTH,
+    Math.min(INPUT_MAX_WIDTH, parseInt(getTextWidth(el.value, FONT) + 4))
   );
   el.style.width = textWidth + 'px';
   const inputDuplicate = document.querySelector('.inputToRedirect');
