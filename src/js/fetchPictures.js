@@ -1,3 +1,4 @@
+//sending get request to server
 import axios from 'axios';
 
 const ax = axios.create({

@@ -1,7 +1,6 @@
+//handling gallery display
 import SimpleLightbox from 'simplelightbox';
-import { sendData } from './inputChange';
-// import { debounce } from './functions';
-// import { log } from './functions';
+import { sendData } from './sendData';
 
 const options = {
   captions: true,
@@ -52,7 +51,8 @@ export const gallery = {
     galleryDiv.innerHTML += markup;
     const links = document.querySelectorAll('.gallery a');
     // const a ??= links[links.length - 1]; //tu nie działa: Uncaught SyntaxError: missing = in const declaration
-    const a = links ? links[links.length - 1] : null; // tu zadziała
+    // const a = links ? links[links.length - 1] : null;
+    const a = links[links.length - 1] || null;
     if (a) {
       a.onclick = e => {
         e.preventDefault();
@@ -80,7 +80,16 @@ export const gallery = {
   },
   loadMore: function () {
     const input = document.querySelector('.searchInput');
-    sendData(input, { resetSearch: false, doNotDebounce: true })();
+    sendData(input.value, { resetSearch: false });
     //
+  },
+
+  updatePageCount: function () {
+    const pagesDisplay = document.querySelectorAll('.page');
+    const maxPagesDisplay = document.querySelectorAll('.maxPages');
+    for (let i = 0; i < pagesDisplay.length; i++) {
+      pagesDisplay[i].innerHTML = `${lastPage}`;
+      maxPagesDisplay[i].innerHTML = `${maxPages}`;
+    }
   },
 };
